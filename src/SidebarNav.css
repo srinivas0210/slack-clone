@@ -1,0 +1,23 @@
+.sidebarNav {
+    background-color : var(--slack-color);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    
+    padding: 4px 10px;
+    cursor: pointer;
+}
+.sidebarNav:hover {
+    background-color : #340e36;
+    opacity: 0.9;
+}
+.sidebarNav__icon {
+    font-size: 15px !important;
+    margin-right: 10px;
+}
+.sidebarNav h3 {
+    font-weight: 500;
+}
+.sidebarNav__hash {
+    margin:0 5px;
+}

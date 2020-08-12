@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import "./App.css";
+import Header from "./Header.js";
+import Sidebar from "./Sidebar.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+        <h1>Hey am here to immitate the slack application out here!!</h1>
+
+        <Header />
+        <div className="app__body">
+          <Sidebar />
+
+          <Switch>
+            <Route path="/">
+              <h1>Welcome</h1>
+            </Route>
+            <Route path="/room/:roomID">
+              <h1>this screen</h1>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
