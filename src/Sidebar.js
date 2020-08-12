@@ -9,8 +9,8 @@ import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import AppsIcon from "@material-ui/icons/Apps";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import AddIcon from '@material-ui/icons/Add';
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import AddIcon from "@material-ui/icons/Add";
 
 import "./Sidebar.css";
 import SidebarNav from "./SidebarNav.js";
@@ -20,14 +20,14 @@ function Sidebar() {
   const [channels, setChannels] = useState(["a", "b"]);
 
   useEffect(() => {
-    db.collection("rooms").onSnapshot((snapshot) =>
+    db.collection("rooms").onSnapshot((snapshot) => {
       setChannels(
         snapshot.docs.map((doc) => ({
           id: doc.id,
           name: doc.data().name,
         }))
-      )
-    );
+      );
+    });
   }, []);
 
   return (
@@ -55,9 +55,9 @@ function Sidebar() {
       <hr />
       <SidebarNav Icon={ExpandMoreIcon} title="channels" />
       <hr />
-      <SidebarNav Icon={AddIcon} title="Add channel" />
-      {channels.map((channel) => (
-        <SidebarNav title={channel.name} id={channel.id} />
+      <SidebarNav Icon={AddIcon} addChannelOption title="Add channel" />
+      {channels.map((channel,index) => (
+        <SidebarNav title={channel.name} key={index} id={channel.id} />
       ))}
     </div>
   );

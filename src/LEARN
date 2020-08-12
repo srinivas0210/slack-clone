@@ -1,0 +1,4 @@
+1.usestate() and useEffect() are only to be used in functional components,
+ but not in class components.
+2.learn about useParam , useHistory , useLocation on youtube video which is saved 
+ in react hacks playlist.
