@@ -1,4 +1,11 @@
+0. if you want a button triggers white enter for an input => wrap the input and  button 
+ into form and make button display: none !important as in chat.css/chat_input/button of this slack clone
+0.1. to change the size of the material ui icon then add '!important' at end.
+0.2. search  here var(--slack-color).
+0.3. study about html entities to have reserved symbol on DOM. 
+0.4. use object.fit:contain ; for making image width height ratio stable.
 1.usestate() and useEffect() are only to be used in functional components,
  but not in class components.
 2.learn about useParam , useHistory , useLocation on youtube video which is saved 
  in react hacks playlist.
+3.use NODEMON to automate the server restarting every time you cahnge the code.

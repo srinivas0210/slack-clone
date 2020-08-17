@@ -5,19 +5,23 @@ import SearchIcon from '@material-ui/icons/Search';
 import HelpIcon from '@material-ui/icons/Help';
 
 import './Header.css';
+import { useStateValue } from './StateProvider';
 
 function Header() {
+    const [{user}] = useStateValue();
     return (
         <div className="header">
             <div className="header__left">
-                <Avatar />
+                <Avatar 
+                src = {user?.photoURL}
+                alt = {user?.displayName} />
                 <AccessTimeIcon />
                 {/* clock icon */}
             </div>
             <div className="header__search">
                 <SearchIcon />
                 {/* search icon */}
-                <input placeholder="Search the programmer here" />
+                <input size="40" placeholder="Search the programmer here" />
             </div>
             <div className="header__right">
                 <HelpIcon />

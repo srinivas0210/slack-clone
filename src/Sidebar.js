@@ -15,8 +15,10 @@ import AddIcon from "@material-ui/icons/Add";
 import "./Sidebar.css";
 import SidebarNav from "./SidebarNav.js";
 import db from "./Firebase.js";
+import { useStateValue } from "./StateProvider";
 
 function Sidebar() {
+  const [{user}] = useStateValue();
   const [channels, setChannels] = useState(["a", "b"]);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function Sidebar() {
           <h2>Lolakulu Projects</h2>
           <h3>
             <FiberManualRecordIcon />
-            Srinivas Bhamidipati
+            {user?.displayName}
           </h3>
         </div>
         <div>

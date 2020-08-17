@@ -1,0 +1,19 @@
+p {
+    margin: 0 ;
+}
+.messages {
+    display: flex;
+    align-items: center;
+    margin :10px 5px;
+}
+
+.messages img {
+    object-fit:  contain;
+    margin-right  :10px;
+}
+
+.message__info span {
+    margin-left: 30px;
+    opacity : 0.3;
+    font-size: 12px;
+}
